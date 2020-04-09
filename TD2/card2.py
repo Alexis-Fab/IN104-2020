@@ -12,7 +12,9 @@ TODO:
 
 
 COEUR, CARREAU, PIQUE, TREFLE = (0, 1, 2, 3)
-#valeur : 7, 8, 9, 10, 11, 12, 13, 14 
+#valeur : 7, 8, 9, 11, 12, 13, 13.5, 14 
+
+ATOUT = PIQUE
 
 class Card:
     def __init__(self):
@@ -25,9 +27,11 @@ class Card:
     #     self.valeur = valeur
 
     def __str__(self):
-        s = "coucou"   #FIXME
-        return s
-        
+  
+        switcher_valeur = {7:"7", 8:"8", 9:"9", 11:"Valet", 12:"Dame", 13:"Roi", 13.5:"Dix", 14:"As"}
+        switcher_couleur = {COEUR:"Coeur", CARREAU:"Carreau", PIQUE:"Pique", TREFLE:"Trèfle"}
+        return (switcher_valeur[self.valeur] + " de " + switcher_couleur[self.couleur])
+
     
 
 # card1 = Card(10, COEUR)
